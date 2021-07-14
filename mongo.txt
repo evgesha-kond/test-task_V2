@@ -1,0 +1,19 @@
+1. Выведите 10 записей из коллекции posts пропустив первые 5 и сделайте сортировку
+    в алфовитном порядке по полю author
+    
+    db.posts.find().skip(5).limit(10).sort({author: 1})
+
+    
+2. Выведите все записи у которых dislike меньше  100
+
+    db.posts.find({dislike: {$lt: 100}})
+
+    
+3. Увеличить like на +1 во всех posts  у который author  === 'a1' 
+
+    db.posts.update({author: "a1"}, {$inc: {like: 1}}, {multi: true})
+
+    
+4. Выведите список title и их общее количество dislike
+
+    
